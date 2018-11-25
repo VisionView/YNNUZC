@@ -96,7 +96,7 @@ export default {
             icon: 'el-icon-sold-out'
           },
           path: 'demo3'
-        },
+        }
       ]
     }
   },
