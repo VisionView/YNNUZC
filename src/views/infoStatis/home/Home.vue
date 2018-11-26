@@ -30,6 +30,9 @@
       <el-col :span="12">
         <div ref="oneChart" class="echart"></div>
       </el-col>
+      <el-col :span="12">
+        <div ref="twoChart" class="echart"></div>
+      </el-col>
     </el-row>
     <!-- <h1>首页展示内容</h1>
     男女比例
@@ -51,12 +54,14 @@ export default {
   methods: {
     initCharts () {
       let sexChart = this.$echarts.init(this.$refs.oneChart)
+      let twoChart = this.$echarts.init(this.$refs.twoChart)
       this.sexChartInfo(sexChart)
+      this.twoChartInfo(twoChart)
     },
     sexChartInfo (sexChart) {
       let option = {
         title: {
-          text: '申报人数男女比例',
+          text: '总男女比例',
           subtext: '模拟数据',
           x: 'center'
         },
@@ -82,7 +87,32 @@ export default {
         color: ['#37a2da','#e062ae']
       }
       sexChart.setOption(option)
-    }
+    },
+    twoChartInfo (twoChart) {
+      let option = {
+        title: {
+          text: '各学院人数',
+          subtext: '模拟数据',
+          x: 'center'
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: '{b} : {c}人'
+        },
+        xAxis: {
+          type: 'category',
+          data: ['信息学院', '数学学院', '物电学院', '化工学院', '美术学院', '体育学院', '生科学院']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [{
+          data: [120, 200, 150, 80, 70, 110, 130],
+          type: 'bar'
+        }]
+      }
+      twoChart.setOption(option)
+  }
   },
   mounted () {
     this.initCharts()

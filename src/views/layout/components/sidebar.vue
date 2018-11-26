@@ -30,16 +30,42 @@ export default {
         {
           index: '001',
           meta: {
-            title: '基本信息',
+            title: '信息统计',
             icon: 'iconfont icon-baobiao'
           },
           children: [
             {
               path: 'home',
               meta: {
-                title: '首页'
+                title: '学生信息统计'
               }
             },
+            {
+              path: 'demo2',
+              meta: {
+                title: '学院信息统计'
+              }
+            },
+            {
+              path: 'demo4',
+              meta: {
+                title: '专业信息统计'
+              }
+            },
+            {
+              path: 'demo1',
+              meta: {
+                title: '统计信息管理'
+              }
+            }
+          ]
+        },{
+          index: '002',
+          meta: {
+            title: '基本信息',
+            icon: 'iconfont icon-baobiao'
+          },
+          children: [
             {
               path: 'demo2',
               meta: {
@@ -51,16 +77,89 @@ export default {
               meta: {
                 title: '专业信息'
               }
+            },
+            {
+              path: 'demo1',
+              meta: {
+                title: '班级信息'
+              }
+            },
+            {
+              path: 'demo4',
+              meta: {
+                title: '学生信息'
+              }
             }
           ]
         },
         {
           index: '003',
           meta: {
-            title: '导航三',
-            icon: 'el-icon-sold-out'
+            title: '测评单元审议',
+            icon: 'iconfont icon-baobiao'
           },
-          path: 'demo3'
+          children: [
+            {
+              path: 'demo2',
+              meta: {
+                title: '评议员审核'
+              }
+            }
+          ]
+        },
+        {
+          index: '004',
+          meta: {
+            title: '综测审核',
+            icon: 'iconfont icon-baobiao'
+          },
+          children: [
+            {
+              path: 'demo3',
+              meta: {
+                title: '学校审核'
+              }
+            },
+            {
+              path: 'demo1',
+              meta: {
+                title: '学院审核'
+              }
+            },
+            {
+              path: 'demo4',
+              meta: {
+                title: '班级审核'
+              }
+            },
+          ]
+        },
+        {
+          index: '005',
+          meta: {
+            title: '综测结果',
+            icon: 'iconfont icon-baobiao'
+          },
+          children: [
+            {
+              path: 'demo3',
+              meta: {
+                title: '全校审核结果'
+              }
+            },
+            {
+              path: 'demo1',
+              meta: {
+                title: '学院审核结果'
+              }
+            },
+            {
+              path: 'demo4',
+              meta: {
+                title: '班级审核结果'
+              }
+            }
+          ]
         },
         {
           index: '007',
@@ -72,19 +171,31 @@ export default {
             {
               path: 'student',
               meta: {
-                title: '学生用户'
+                title: '学校管理员'
               }
             },
             {
               path: 'correction',
               meta: {
-                title: '评议人员'
+                title: '学院管理员'
               }
             },
             {
               path: 'manager',
               meta: {
-                title: '管理员'
+                title: '班级管理员'
+              }
+            },
+            {
+              path: 'manager',
+              meta: {
+                title: '评议员'
+              }
+            },
+            {
+              path: 'manager',
+              meta: {
+                title: '系统管理员'
               }
             }
           ]

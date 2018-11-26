@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Layout from '@/views/layout/Layout'
-import Home from '@/views/baseInfo/home/Home'
+import Home from '@/views/infoStatis/home/Home'
 import Student from '@/views/purview/student/Student'
 import Correction from '@/views/purview/correction/Correction'
 import Manager from '@/views/purview/manager/Manager'
@@ -19,6 +19,7 @@ export default new Router({
       component: Layout,
       redirect: '/home',
       name: 'Home',
+      hiddden: true,
       children: [
         {
           path: 'home',
@@ -28,9 +29,10 @@ export default new Router({
     {
       path: '/',
       component: Layout,
+      hiddden: false,
       name: 'baseInfo',
       meta: {
-        title: '基本信息',
+        title: '信息统计',
         icon: 'iconfont icon-baobiao'
       },
       children: [
@@ -56,6 +58,14 @@ export default new Router({
           component: Demo4,
           meta: {
             title: '专业信息'
+          }
+        },
+        {
+          path: 'demo1',
+          name: 'Demo1',
+          component: Demo1,
+          meta: {
+            title: '信息管理'
           }
         }
       ]

@@ -57,3 +57,9 @@ background-color: #1f2d3d;
 .el-menu-item-group__title {
 padding: 0;
 }
+.el-row {
+  margin-bottom: 20px;
+}
+.el-row:last-child {
+  margin-bottom: 0;
+}
