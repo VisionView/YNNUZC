@@ -26,9 +26,6 @@
 .el-menu-item [class^=el-icon-] {
   color: #fff !important;
 }
-.el-submenu__title i {
-  color: #ffffff;
-}
 /* 配置sidebar标题颜色 */
 .el-submenu__title {
   color: #efefef !important;
@@ -57,9 +54,8 @@ background-color: #1f2d3d;
 .el-menu-item-group__title {
 padding: 0;
 }
-.el-row {
-  margin-bottom: 20px;
-}
-.el-row:last-child {
-  margin-bottom: 0;
+.el-table td,
+.el-table th {
+  padding: 0;
+  height: 40px;
 }

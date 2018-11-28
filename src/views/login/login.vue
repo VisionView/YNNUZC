@@ -1,9 +1,5 @@
 <template>
-  <div>
-    学生
-    教师
-    管理员
-  </div>
+  <div>login</div>
 </template>
 <script>
 export default {

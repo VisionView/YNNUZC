@@ -1,34 +1,43 @@
 <template>
   <el-card>
-    <el-row>
+    <el-row :gutter="20">
       <el-col :span="6">
         <div class="cart">
-          <div class="desc">申报总人数</div>
-          <div class="num">1520 (人)</div>
+          <div class="desc">学生总人数</div>
+          <div class="num">32768 (人)</div>
         </div>
       </el-col>
       <el-col :span="6">
         <div class="cart">
           <div class="desc">申报总人数</div>
-          <div class="num">1520 (人)</div>
+          <div class="num">27520 (人)</div>
         </div>
       </el-col>
       <el-col :span="6">
         <div class="cart">
-          <div class="desc">申报总人数</div>
-          <div class="num">1520 (人)</div>
+          <div class="desc">未申报总人数</div>
+          <div class="num">5248 (人)</div>
         </div>
       </el-col>
       <el-col :span="6">
+<<<<<<< HEAD:src/views/infoStatis/home/Home.vue
         <div class="cart lastCart">
+          <div class="desc">学院数</div>
+          <div class="num">19</div>
+=======
+        <div class="cart">
           <div class="desc">申报总人数</div>
           <div class="num">1520 (人)</div>
+>>>>>>> 70b7279e44fc34a40bb88995b6fe3d935f2134ca:src/views/demo/charts.vue
         </div>
       </el-col>
     </el-row>
     <el-row>
-      <el-col :span="12">
+      <el-col :span="6">
         <div ref="oneChart" class="echart"></div>
+      </el-col>
+      <el-col :span="18">
+        <div ref="twoChart" class="echart"></div>
       </el-col>
     </el-row>
     <!-- <h1>首页展示内容</h1>
@@ -44,19 +53,21 @@ export default {
     return {
       sexNum: {
         male: '455',
-        female: '200',
+        female: '200'
       }
     }
   },
   methods: {
     initCharts () {
       let sexChart = this.$echarts.init(this.$refs.oneChart)
+      let twoChart = this.$echarts.init(this.$refs.twoChart)
       this.sexChartInfo(sexChart)
+      this.twoChartInfo(twoChart)
     },
     sexChartInfo (sexChart) {
       let option = {
         title: {
-          text: '申报人数男女比例',
+          text: '总男女比例',
           subtext: '模拟数据',
           x: 'center'
         },
@@ -79,9 +90,34 @@ export default {
             { value: this.sexNum.female, name: '女' }
           ]
         }],
-        color: ['#37a2da','#e062ae']
+        color: ['#37a2da', '#e062ae']
       }
       sexChart.setOption(option)
+    },
+    twoChartInfo (twoChart) {
+      let option = {
+        title: {
+          text: '各学院人数',
+          subtext: '模拟数据',
+          x: 'center'
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: '{b} : {c}人'
+        },
+        xAxis: {
+          type: 'category',
+          data: ['信息学院', '数学学院', '物电学院', '化工学院', '美术学院', '体育学院', '生科学院']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [{
+          data: [120, 200, 150, 80, 70, 110, 130],
+          type: 'bar'
+        }]
+      }
+      twoChart.setOption(option)
     }
   },
   mounted () {
@@ -92,6 +128,7 @@ export default {
 <style lang="stylus" scoped>
 .el-card
   .el-row
+    margin-bottom 20px
     .cart
       display flex
       min-width 240px
@@ -111,13 +148,7 @@ export default {
         flex 1
         padding-left 20px
         color #783c7e
-    .lastCart
-      margin-right 0
-  // display flex
-  // width 100%
-.echart
-  height 420px
-  width 400px
-    // flex 1
-    // background #efefef
+  .echart
+    height 400px
+    min-width 260px
 </style>
