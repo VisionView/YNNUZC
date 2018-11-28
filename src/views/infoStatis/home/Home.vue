@@ -3,26 +3,26 @@
     <el-row>
       <el-col :span="6">
         <div class="cart">
-          <div class="desc">申报总人数</div>
-          <div class="num">1520 (人)</div>
+          <div class="desc">学生总人数</div>
+          <div class="num">32768 (人)</div>
         </div>
       </el-col>
       <el-col :span="6">
         <div class="cart">
           <div class="desc">申报总人数</div>
-          <div class="num">1520 (人)</div>
+          <div class="num">27520 (人)</div>
         </div>
       </el-col>
       <el-col :span="6">
         <div class="cart">
-          <div class="desc">申报总人数</div>
-          <div class="num">1520 (人)</div>
+          <div class="desc">未申报总人数</div>
+          <div class="num">5248 (人)</div>
         </div>
       </el-col>
       <el-col :span="6">
         <div class="cart lastCart">
-          <div class="desc">申报总人数</div>
-          <div class="num">1520 (人)</div>
+          <div class="desc">学院数</div>
+          <div class="num">19</div>
         </div>
       </el-col>
     </el-row>
