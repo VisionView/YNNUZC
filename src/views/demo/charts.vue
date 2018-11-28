@@ -1,6 +1,6 @@
 <template>
   <el-card>
-    <el-row>
+    <el-row :gutter="20">
       <el-col :span="6">
         <div class="cart">
           <div class="desc">申报总人数</div>
@@ -20,17 +20,17 @@
         </div>
       </el-col>
       <el-col :span="6">
-        <div class="cart lastCart">
+        <div class="cart">
           <div class="desc">申报总人数</div>
           <div class="num">1520 (人)</div>
         </div>
       </el-col>
     </el-row>
     <el-row>
-      <el-col :span="12">
+      <el-col :span="6">
         <div ref="oneChart" class="echart"></div>
       </el-col>
-      <el-col :span="12">
+      <el-col :span="18">
         <div ref="twoChart" class="echart"></div>
       </el-col>
     </el-row>
@@ -47,7 +47,7 @@ export default {
     return {
       sexNum: {
         male: '455',
-        female: '200',
+        female: '200'
       }
     }
   },
@@ -84,7 +84,7 @@ export default {
             { value: this.sexNum.female, name: '女' }
           ]
         }],
-        color: ['#37a2da','#e062ae']
+        color: ['#37a2da', '#e062ae']
       }
       sexChart.setOption(option)
     },
@@ -112,7 +112,7 @@ export default {
         }]
       }
       twoChart.setOption(option)
-  }
+    }
   },
   mounted () {
     this.initCharts()
@@ -122,6 +122,7 @@ export default {
 <style lang="stylus" scoped>
 .el-card
   .el-row
+    margin-bottom 20px
     .cart
       display flex
       min-width 240px
@@ -141,13 +142,7 @@ export default {
         flex 1
         padding-left 20px
         color #783c7e
-    .lastCart
-      margin-right 0
-  // display flex
-  // width 100%
-.echart
-  height 420px
-  width 400px
-    // flex 1
-    // background #efefef
+  .echart
+    height 400px
+    min-width 260px
 </style>

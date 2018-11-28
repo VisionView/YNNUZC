@@ -18,3 +18,52 @@ body {
     font-size: 18px;
     vertical-align: middle;
 }
+.purple {
+    color: #783d7f;
+}
+.text-center {
+    text-align: center;
+}
+.fr {
+    float: right;
+}
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+  
+.clearfix:after {
+    clear: both
+}
+
+.btn-warning {
+    color: #cf8c34;
+}
+.btn-warning:hover,
+.btn-warning:active,
+.btn-warning:focus,
+.btn-warning:visited {
+    color: #e9b86e;
+}
+.btn-danger {
+    color: #fc3030;
+}
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger:focus,
+.btn-danger:visited {
+    color: #fd7d7d;
+}
+
+.btn-add {
+    color: #fff;
+    border-color: #e8cceb;
+    background-color: #783d7f;
+}
+.btn-add:focus,
+.btn-add:hover {
+    color: #f9f9f9;
+    border-color: #e8cceb;
+    background-color: #936899;
+}
