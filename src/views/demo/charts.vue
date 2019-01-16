@@ -20,15 +20,9 @@
         </div>
       </el-col>
       <el-col :span="6">
-<<<<<<< HEAD:src/views/infoStatis/home/Home.vue
         <div class="cart lastCart">
           <div class="desc">学院数</div>
           <div class="num">19</div>
-=======
-        <div class="cart">
-          <div class="desc">申报总人数</div>
-          <div class="num">1520 (人)</div>
->>>>>>> 70b7279e44fc34a40bb88995b6fe3d935f2134ca:src/views/demo/charts.vue
         </div>
       </el-col>
     </el-row>

@@ -103,10 +103,22 @@ export default new Router({
       },
       children: [
         {
-          path: 'demo4',
+          path: 'check',
           name: 'Demo4',
           component: Demo4,
-          meta: { title: '评议员审核' }
+          meta: { title: '审核学生自评信息' }
+        },
+        {
+          path: 'demo4',
+          name: 'nature',
+          component: () => import('@/views/evaluate/nature'),
+          meta: { title: '定性考评' }
+        },
+        {
+          path: 'demo4',
+          name: 'nature',
+          component: () => import('@/views/evaluate/nature'),
+          meta: { title: '定量考评' }
         }
       ]
     },
@@ -154,19 +166,19 @@ export default new Router({
           path: 'result',
           name: 'Result',
           component: () => import('@/views/demo/result'),
-          meta: { title: '全校审核结果' }
+          meta: { title: '全校综测结果' }
         },
         {
           path: 'result2',
           name: 'Result2',
           component: () => import('@/views/demo/result2'),
-          meta: { title: '学院审核结果' }
+          meta: { title: '学院综测结果' }
         },
         {
           path: 'demo4',
           name: 'Demo4',
           component: Demo4,
-          meta: { title: '班级审核结果' }
+          meta: { title: '班级综测结果' }
         }
       ]
     },
@@ -178,9 +190,9 @@ export default new Router({
       meta: { title: '权限管理', icon: 'el-icon-sold-out' },
       children: [
         {
-          path: 'demo4',
-          name: 'Demo4',
-          component: Demo4,
+          path: 'school',
+          name: 'School',
+          component: () => import('@/views/scope/school'),
           meta: { title: '学校管理员' }
         },
         {

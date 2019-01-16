@@ -61,16 +61,16 @@ export default {
         name: '信息学院',
       }],
       profession: [{
-          id: '1',
-          text: '软件工程'
-        },
-        {
-          id: '2',
-          text: '大数据'
-        },
-        {
-          id: '3',
-          text: '计算机科学与技术'
+        id: '1',
+        text: '软件工程'
+      },
+      {
+        id: '2',
+        text: '大数据'
+      },
+      {
+        id: '3',
+        text: '计算机科学与技术'
       }],
       selectInfo: {
 
