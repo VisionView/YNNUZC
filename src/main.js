@@ -5,24 +5,17 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 import App from './App'
 import router from './router'
+/*
 
+*/
 import 'css/reset.css'
 import 'css/element-ui.css'
 // import 'https://at.alicdn.com/t/font_927359_go8czibrhii.css'
-/*
-// 按需引入 引入 ECharts 主模块
-var echarts = require('echarts/lib/echarts')
-// 引入柱状图
-require('echarts/lib/chart/bar')
-// 引入提示框和标题组件
-require('echarts/lib/component/tooltip')
-require('echarts/lib/component/title')
 
-//全部引入
-var echarts = require('echarts')
-*/
-//全部引入
-var echarts = require('echarts')
+import echarts from 'echarts'
+// 一般都要加个$加到vue的原型链上，方便引用
+Vue.prototype.$echarts = echarts
+
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 

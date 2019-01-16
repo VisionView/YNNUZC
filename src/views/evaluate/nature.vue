@@ -1,14 +1,9 @@
 <template>
-  <div>login</div>
+<div></div>
 </template>
 <script>
 export default {
-  name: 'Login',
-  data () {
-    return {
-
-    }
-  }
+  name: 'Nature'
 }
 </script>
 <style lang="stylus" scoped>

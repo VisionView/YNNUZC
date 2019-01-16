@@ -1,4 +1,5 @@
 <template>
-  <div>评议人员
+  <div>
+    table
   </div>
 </template>
