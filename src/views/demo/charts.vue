@@ -16,7 +16,7 @@
       <el-col :span="6">
         <div class="cart">
           <div class="desc">未申报总人数</div>
-          <div class="num">5248 (人)</div>
+          <div class="num">56 (人)</div>
         </div>
       </el-col>
       <el-col :span="6">
