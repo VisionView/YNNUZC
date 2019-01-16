@@ -37,22 +37,10 @@ export default new Router({
           meta: { title: '学生信息统计' }
         },
         {
-          path: 'demo4',
-          name: 'Demo4',
-          component: Demo4,
+          path: 'academystatistics',
+          name: 'academystatistics',
+          component: () => import('@/views/demo/academystatistics'),
           meta: { title: '学院信息统计' }
-        },
-        {
-          path: 'demo4',
-          name: 'Demo4',
-          component: Demo4,
-          meta: { title: '专业信息统计' }
-        },
-        {
-          path: 'demo4',
-          name: 'Demo4',
-          component: Demo4,
-          meta: { title: '统计信息管理' }
         }
       ]
     },
@@ -62,7 +50,7 @@ export default new Router({
       hidden: false,
       name: 'info',
       meta: {
-        title: '基本信息',
+        title: '基本信息管理',
         icon: 'el-icon-sold-out'
       },
       children: [
@@ -105,7 +93,7 @@ export default new Router({
         {
           path: 'check',
           name: 'Demo4',
-          component: Demo4,
+          component: () => import('@/views/demo/checkstudent'),
           meta: { title: '审核学生自评信息' }
         },
         {
