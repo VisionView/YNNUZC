@@ -2,33 +2,32 @@
   <el-card>
     <el-row>
       <el-col :span="24">
-        <colleges-number/>
+        <colleges-chart/>
       </el-col>
       <el-col :span="8">
-        <male-number/>
+        <male-chart/>
       </el-col>
       <el-col :span="8">
-        <national-number/>
+        <national-chart/>
       </el-col>
       <el-col :span="8">
-        <male-number/>
+        <birth-chart/>
       </el-col>
     </el-row>
     <!-- 学院数、教师数、 -->
-    籍贯分布（饼状图）
-    F11 全屏
-    分布（饼状图）
   </el-card>
 </template>
 <script>
-import  CollegesNumber from './components/charts/colNum'
-import  MaleNumber from './components/charts/sex'
-import  NationalNumber from './components/charts/national'
+import  CollegesChart from './components/charts/colNum'
+import  MaleChart from './components/charts/sex'
+import  NationalChart from './components/charts/national'
+import  BirthChart from './components/charts/birthplace'
 export default {
   components: {
-    CollegesNumber,
-    MaleNumber,
-    NationalNumber
+    CollegesChart,
+    MaleChart,
+    NationalChart,
+    BirthChart
   },
   data () {
     return {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div ref="nationalChart" class="echart"></div>
+    <div ref="birthChart" class="echart"></div>
   </div>
 </template>
 <script>
@@ -8,13 +8,12 @@ export default {
   data () {
     return {
       national: [
-        { name: '汉族', num: '14002' },
-        { name: '白族族', num: '1508' },
-        { name: '彝族', num: '1102' },
-        { name: '维吾尔族', num: '702' },
-        { name: '独龙族', num: '402' },
-        { name: '布依族', num: '102' },
-        { name: '回族', num: '1402' }
+        { name: '云南省', num: '1402' },
+        { name: '山东省', num: '158' },
+        { name: '四川省', num: '112' },
+        { name: '陕西省', num: '72' },
+        { name: '贵州省', num: '42' },
+        { name: '广东省', num: '12' }
       ],
       sexNum: {
         male: '455',
@@ -24,14 +23,14 @@ export default {
   },
   methods: {
     initCharts () {
-      let natChart = this.$echarts.init(this.$refs.nationalChart)
-      this.sexChartInfo(natChart)
+      let birthChart = this.$echarts.init(this.$refs.birthChart)
+      this.sexChartInfo(birthChart)
     },
-    sexChartInfo (natChart) {
+    sexChartInfo (birthChart) {
       let data = this.getData(this.national.length)
-      natChart.setOption({
+      birthChart.setOption({
         title: {
-          text: '各民族占比分布',
+          text: '学生籍贯分布情况',
           subtext: '模拟数据',
           x: 'center'
         },
@@ -40,7 +39,7 @@ export default {
           formatter: '{a} <br/>{b} : {c}人 ({d}%)'
         },
         series: [{
-          name: '各民族占比',
+          name: '籍贯占比',
           type: 'pie',
           radius: '50%',
           center: ['50%', '50%'],

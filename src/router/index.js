@@ -19,7 +19,7 @@ export default new Router({
     {
       path: '/',
       name: 'Layout',
-      redirect: '/info/index',
+      redirect: '/statistics/index',
       meta: {
         name: '首页',
         auth: false // 这个字段以后用来验证必须登录才能查看

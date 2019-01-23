@@ -5,6 +5,7 @@
       <el-header>
         <div class="iconfont icon-menu" :class="Active" @click="menuClick"></div>
         <bread-crumb :BreadList="breads"/>
+        <div class="iconfont icon-screenfull screenfull" @click="ScreenFull"></div>
         <home-user/>
       </el-header>
       <el-main>
@@ -14,6 +15,7 @@
   </el-container>
 </template>
 <script>
+import screenfull from 'screenfull'
 import HomeAside from './components/Aside'
 import BreadCrumb from './components/Breadcrumb'
 import HomeUser from './components/User'
@@ -29,6 +31,7 @@ export default {
     return {
       Collapse: false,
       isActive: false,
+      ifFullScreenL: false,
       breads: []
     }
   },
@@ -36,6 +39,16 @@ export default {
     menuClick () {
       this.Collapse = !this.Collapse
       this.isActive = !this.isActive
+    },
+    ScreenFull () {
+      if (!screenfull.enabled) {
+        this.$message({
+          message: '浏览器不支持全屏！',
+          type: 'warning'
+        })
+        return false
+      }
+      screenfull.toggle ()
     }
   },
   computed: {
@@ -64,4 +77,7 @@ export default {
     flex 1
     margin-left 10px
     line-height 50px
+  .screenfull
+    margin-right 10px
+    cursor pointer
 </style>
