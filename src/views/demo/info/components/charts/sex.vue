@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <div ref="sexChart" class="echart"></div>
-  </div>
+  <div ref="sexChart" class="echart"></div>
 </template>
 <script>
 export default {
@@ -9,7 +7,7 @@ export default {
     return {
       sexNum: {
         male: '455',
-        female: '2000',
+        female: '2000'
       }
     }
   },
@@ -39,7 +37,7 @@ export default {
             { value: this.sexNum.female, name: '女' }
           ]
         }],
-        color: ['#37a2da','#e062ae']
+        color: ['#37a2da', '#e062ae']
       }
       sexChart.setOption(option)
     }

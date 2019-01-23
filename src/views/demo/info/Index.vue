@@ -18,10 +18,10 @@
   </el-card>
 </template>
 <script>
-import  CollegesChart from './components/charts/colNum'
-import  MaleChart from './components/charts/sex'
-import  NationalChart from './components/charts/national'
-import  BirthChart from './components/charts/birthplace'
+import CollegesChart from './components/charts/colNum'
+import MaleChart from './components/charts/sex'
+import NationalChart from './components/charts/national'
+import BirthChart from './components/charts/birthplace'
 export default {
   components: {
     CollegesChart,

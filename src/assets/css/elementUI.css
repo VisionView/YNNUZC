@@ -2,25 +2,6 @@
   height: 100%;
   background: #f9f9f9;
 }
-/* 撑满整个屏幕 */
-.aside {
-  height: 100%;
-  background-color: #304156;
-}
-.el-menu{
-  border: none;
-  background-color: #304156;
-}
-.el-menu:not(.el-menu--collapse){
-  width: 220px;
-}
-.el-header {
-  padding: 0 4px;
-  height: 50px !important;
-  line-height: 50px;
-  border-bottom: 1px solid #e6e6e6;
-  background-color: #fff;
-}
 /* 标题icon配置 */
 .el-submenu [class^="el-icon-"],
 .el-menu-item [class^=el-icon-] {
@@ -62,4 +43,8 @@ padding: 0;
 }
 .el-row:last-child {
   margin-bottom: 0;
+
+}
+.el-menu.el-menu--horizontal {
+  border-bottom: none
 }

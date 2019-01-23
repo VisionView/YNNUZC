@@ -34,3 +34,13 @@ export default {
   }
 }
 </script>
+<style lang="stylus" scoped>
+.aside
+  height 100%
+  background-color #304156
+  .el-menu
+    border none
+    background-color #304156
+  .el-menu:not(.el-menu--collapse)
+    width 220px
+</style>

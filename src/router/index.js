@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Layout from '@/views/layout/Layout'
+import sLayout from '@/views/students/layout/sLayout'
 import siderPath from './siderPath.js'
 import otherPath from './otherPath.js'
+import stuPath from './stuPath.js'
 
 Vue.use(Router)
 
@@ -17,7 +19,7 @@ export default new Router({
       component: () => import('@/views/login/Login.vue')
     },
     {
-      path: '/',
+      path: '/admin',
       name: 'Layout',
       redirect: '/statistics/index',
       meta: {
@@ -28,7 +30,7 @@ export default new Router({
       children: siderPath
     },
     {
-      path: '/',
+      path: '/admin',
       name: 'Layout',
       meta: {
         name: '首页',
@@ -36,6 +38,17 @@ export default new Router({
       },
       component: Layout,
       children: otherPath
+    },
+    {
+      path: '/student',
+      name: 'student',
+      redirect: '/stuInfo/sinfo',
+      meta: {
+        name: '学生端首页',
+        auth: false
+      },
+      component: sLayout,
+      children: stuPath
     },
     {
       path: '/404',

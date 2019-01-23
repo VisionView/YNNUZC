@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <div ref="birthChart" class="echart"></div>
-  </div>
+  <div ref="birthChart" class="echart"></div>
 </template>
 <script>
 export default {
@@ -17,7 +15,7 @@ export default {
       ],
       sexNum: {
         male: '455',
-        female: '2000',
+        female: '2000'
       }
     }
   },
@@ -46,7 +44,7 @@ export default {
           data: data.legendData
         }],
         color: function () {
-          return "#" + Math.floor(Math.random()*16777215).toString(16) 
+          return '#' + Math.floor(Math.random() * 16777215).toString(16)
         }
       })
     },

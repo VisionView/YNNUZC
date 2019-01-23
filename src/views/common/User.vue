@@ -33,6 +33,7 @@ export default {
     height 36px
     width 36px
     margin 7px 0
+    border-radius 50%
   .dropdown-icon
     display inline-block
 </style>

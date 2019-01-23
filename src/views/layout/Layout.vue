@@ -5,25 +5,26 @@
       <el-header>
         <div class="iconfont icon-menu" :class="Active" @click="menuClick"></div>
         <bread-crumb :BreadList="breads"/>
-        <div class="iconfont icon-screenfull screenfull" @click="ScreenFull"></div>
+        <full-page/>
         <home-user/>
       </el-header>
       <el-main>
-        <router-view></router-view>
+        <router-view/>
       </el-main>
     </el-container>
   </el-container>
 </template>
 <script>
-import screenfull from 'screenfull'
 import HomeAside from './components/Aside'
 import BreadCrumb from './components/Breadcrumb'
-import HomeUser from './components/User'
+import FullPage from '@/views/common/fullpage'
+import HomeUser from '@/views/common/User'
 import HomeMain from './../common/Main'
 export default {
   components: {
     HomeAside,
     BreadCrumb,
+    FullPage,
     HomeUser,
     HomeMain
   },
@@ -31,7 +32,6 @@ export default {
     return {
       Collapse: false,
       isActive: false,
-      ifFullScreenL: false,
       breads: []
     }
   },
@@ -39,16 +39,6 @@ export default {
     menuClick () {
       this.Collapse = !this.Collapse
       this.isActive = !this.isActive
-    },
-    ScreenFull () {
-      if (!screenfull.enabled) {
-        this.$message({
-          message: '浏览器不支持全屏！',
-          type: 'warning'
-        })
-        return false
-      }
-      screenfull.toggle ()
     }
   },
   computed: {
@@ -62,6 +52,11 @@ export default {
 @import '~css/base.styl'
 .el-header
   display flex
+  padding 0 4px
+  height 50px !important
+  line-height 50px
+  border-bottom 1px solid #e6e6e6
+  background-color #fff
   .icon-menu
     width 40px
     line-height 40px
@@ -77,7 +72,4 @@ export default {
     flex 1
     margin-left 10px
     line-height 50px
-  .screenfull
-    margin-right 10px
-    cursor pointer
 </style>
