@@ -27,9 +27,6 @@ export default {
           subtext: '2018-2019学年',
           x: 'center'
         },
-        legend: {
-          type: 'scroll'
-        },
         tooltip: {
           trigger: 'item',
           formatter: '{b} : {c}人'

@@ -4,13 +4,17 @@
       <el-col :span="24">
         <colleges-number/>
       </el-col>
-      <el-col :span="12">
+      <el-col :span="8">
+        <male-number/>
+      </el-col>
+      <el-col :span="8">
+        <national-number/>
+      </el-col>
+      <el-col :span="8">
         <male-number/>
       </el-col>
     </el-row>
     <!-- 学院数、教师数、 -->
-    男女比例（饼状图）
-    民族分布（饼状图）
     籍贯分布（饼状图）
     F11 全屏
     分布（饼状图）
@@ -19,10 +23,12 @@
 <script>
 import  CollegesNumber from './components/charts/colNum'
 import  MaleNumber from './components/charts/sex'
+import  NationalNumber from './components/charts/national'
 export default {
   components: {
     CollegesNumber,
-    MaleNumber
+    MaleNumber,
+    NationalNumber
   },
   data () {
     return {

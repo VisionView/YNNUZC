@@ -29,11 +29,6 @@ export default {
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c} ({d}%)'
         },
-        legend: {
-          orient: 'vertical',
-          left: 'left',
-          data: ['男', '女']
-        },
         series: [{
           name: '男女比例',
           type: 'pie',
