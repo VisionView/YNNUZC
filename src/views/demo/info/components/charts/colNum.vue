@@ -21,7 +21,7 @@ export default {
     colChartInfo (colChart) {
       let option = {
         title: {
-          text: '各学院人数',
+          text: '各学院人数分布图',
           subtext: '2018-2019学年',
           x: 'center'
         },

@@ -14,7 +14,25 @@ export default [
         meta: {
           auth: false
         },
-        component: () => import('@/views/students/stuInfo/sinfo.vue')
+        component: () => import('@/views/students/stuInfo/Sinfo.vue')
+      }
+    ]
+  },
+  {
+    path: '/evaluation',
+    name: 'evaluation',
+    meta: {
+      auth: false
+    },
+    component: Main,
+    children: [
+      {
+        path: 'self',
+        name: 'self',
+        meta: {
+          auth: false
+        },
+        component: () => import('@/views/students/evaluation/Sself.vue')
       }
     ]
   }
