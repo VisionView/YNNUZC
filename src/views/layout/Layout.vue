@@ -1,20 +1,12 @@
 <template>
   <el-container>
-    <sidebar :collapse="Collapse" />
+    <home-aside :collapse="Collapse" />
     <el-container>
       <el-header>
         <div class="iconfont icon-menu" :class="Active" @click="menuClick"></div>
-        <Bread-Crumb :BreadList="breads"/>
-        <el-dropdown trigger="click">
-          <div>
-            <img src="@/assets/img/GeekFunicon.png" class="user-img" alt="user-img">
-            <i class="el-icon-caret-bottom el-icon--right dropdown-icon"></i>
-          </div>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>设置密码</el-dropdown-item>
-            <el-dropdown-item>注 销</el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
+        <bread-crumb :BreadList="breads"/>
+        <full-page/>
+        <home-user/>
       </el-header>
       <el-main>
         <router-view/>
@@ -23,20 +15,24 @@
   </el-container>
 </template>
 <script>
-import Sidebar from './components/sidebar'
+import HomeAside from './components/Aside'
 import BreadCrumb from './components/breadcrumb'
+import FullPage from '@/views/common/fullpage'
+import HomeUser from '@/views/common/User'
+import HomeMain from './../common/main'
 export default {
-  name: 'Home',
   components: {
-    Sidebar,
-    BreadCrumb
+    HomeAside,
+    BreadCrumb,
+    FullPage,
+    HomeUser,
+    HomeMain
   },
   data () {
     return {
       Collapse: false,
       isActive: false,
       breads: []
-
     }
   },
   methods: {
@@ -56,6 +52,11 @@ export default {
 @import '~css/base.styl'
 .el-header
   display flex
+  padding 0 4px
+  height 50px !important
+  line-height 50px
+  border-bottom 1px solid #e6e6e6
+  background-color #fff
   .icon-menu
     width 40px
     line-height 40px
@@ -71,14 +72,4 @@ export default {
     flex 1
     margin-left 10px
     line-height 50px
-  .el-dropdown
-    width 80px
-    cursor pointer
-    .user-img
-      float left
-      height 36px
-      width 36px
-      margin 7px 0
-    .dropdown-icon
-      display inline-block
 </style>

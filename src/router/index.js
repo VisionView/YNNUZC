@@ -1,137 +1,69 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Layout from '@/views/layout/Layout'
-import Home from '@/views/baseInfo/home/Home'
-import Student from '@/views/purview/student/Student'
-import Correction from '@/views/purview/correction/Correction'
-import Manager from '@/views/purview/manager/Manager'
-
-import Demo1 from '@/views/demo/demo1'
-import Demo2 from '@/views/demo/demo2'
-import Demo3 from '@/views/demo/demo3'
-import Demo4 from '@/views/demo/demo4'
+import sLayout from '@/views/students/layout/sLayout'
+import siderPath from './siderPath.js'
+import otherPath from './otherPath.js'
+import stuPath from './stuPath.js'
 
 Vue.use(Router)
+
 export default new Router({
   routes: [
     {
-      path: '/',
-      component: Layout,
-      redirect: '/home',
-      name: 'Home',
-      children: [
-        {
-          path: 'home',
-          component: Home
-        }]
+      path: '/login',
+      name: 'login',
+      meta: {
+        name: '登录'
+      },
+      component: () => import('@/views/login/login.vue')
     },
     {
-      path: '/',
-      component: Layout,
-      name: 'baseInfo',
+      path: '/admin',
+      name: 'Layout',
+      redirect: '/statistics/index',
       meta: {
-        title: '基本信息',
-        icon: 'iconfont icon-baobiao'
+        title: '基本信息管理',
+        icon: 'el-icon-sold-out',
+        name: '首页',
+        auth: false // 这个字段以后用来验证必须登录才能查看
       },
-      children: [
-        {
-          path: 'home',
-          name: 'Home',
-          component: Home,
-          meta: {
-            title: '首页'
-          }
-        },
-        {
-          path: 'demo2',
-          name: 'Demo2',
-          component: Demo2,
-          meta: {
-            title: '学院信息'
-          }
-        },
-        {
-          path: 'demo4',
-          name: 'Demo4',
-          component: Demo4,
-          meta: {
-            title: '专业信息'
-          }
-        }
-      ]
+      component: Layout,
+      hidden: false,
+      children: siderPath
     },
     {
-      path: '/',
-      component: Layout,
-      name: 'nav3',
+      path: '/admin',
+      name: 'Layout',
       meta: {
-        title: '导航三',
-        icon: 'el-icon-sold-out'
+        name: '首页',
+        auth: false
       },
-      children: [
-        {
-          path: 'demo3',
-          name: 'Demo3',
-          component: Demo3,
-          meta: {
-            title: 'Demo3'
-          }
-        }
-      ]
+      component: Layout,
+      children: otherPath
     },
     {
-      path: '/',
-      component: Layout,
-      name: 'Purview',
+      path: '/student',
+      name: 'student',
+      redirect: '/stuInfo/sinfo',
       meta: {
-        title: '权限管理',
-        icon: 'iconfont icon-quanxianshenyue'
+        name: '学生端首页',
+        auth: false
       },
-      children: [
-        {
-          path: 'student',
-          name: 'Student',
-          component: Student,
-          meta: {
-            title: '学生用户'
-          }
-        },
-        {
-          path: 'correction',
-          name: 'Correction',
-          component: Correction,
-          meta: {
-            title: '评议人员'
-          }
-        },
-        {
-          path: 'manager',
-          name: 'Manager',
-          component: Manager,
-          meta: {
-            title: '管理员'
-          }
-        }
-      ]
+      component: sLayout,
+      children: stuPath
     },
     {
-      path: '/',
-      component: Layout,
-      name: 'SysLog',
-      meta: {
-        title: '系统日志',
-        icon: 'iconfont icon-rizhi'
+      path: '/404',
+      name: '404',
+      mate: {
+        name: '404'
       },
-      children: [
-        {
-          path: 'student',
-          name: 'Student',
-          component: Student,
-          meta: {
-            title: '学生用户'
-          }
-        }
-      ]
+      component: () => import('@/views/error/404.vue')
+    },
+    {
+      path: '*',
+      redirect: '/404'
     }
   ]
 })
