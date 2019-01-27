@@ -1,28 +1,37 @@
 import Vue from 'vue'
-
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-
+import VueRouter from 'vue-router'
+import store from './store'
 import App from './App'
 import router from './router'
-/*
-
-*/
-import 'css/reset.css'
-import 'css/element-ui.css'
-// import 'https://at.alicdn.com/t/font_927359_go8czibrhii.css'
-
 import echarts from 'echarts'
-// 一般都要加个$加到vue的原型链上，方便引用
+import 'element-ui/lib/theme-chalk/index.css'
+import 'css/reset.css'
+import 'css/elementUI.css'
+
+Vue.use(VueRouter)
+Vue.use(ElementUI)
+
 Vue.prototype.$echarts = echarts
 
-Vue.use(ElementUI)
 Vue.config.productionTip = false
 
-/* eslint-disable no-new */
-new Vue({
+// 路由拦截器
+router.beforeEach(({meta, path}, from, next) => {
+  let { auth = true } = meta // 该路由是否需要登录
+  let $user = JSON.parse(sessionStorage.getItem('$user')) || {}
+  let isLogin = Boolean($user.auth) // true 用户已登录 false 用户未登录
+  if (!auth && !isLogin && path !== '/login') {
+    return next({ path: '/login' })
+  } else {
+    next()
+  }
+})
+
+let vm = new Vue({
   el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
+  store,
+  render: h => h(App)
 })
+Vue.use({vm})
