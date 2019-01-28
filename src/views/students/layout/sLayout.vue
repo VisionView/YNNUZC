@@ -7,7 +7,7 @@
         <el-submenu index="2">
           <template slot="title">自评管理</template>
           <el-menu-item index="/student/evaluation/self">填写自评信息</el-menu-item>
-          <el-menu-item index="2-2">提交获奖证书</el-menu-item>
+          <el-menu-item index="/student/evaluation/evidence">提交获奖证书</el-menu-item>
         </el-submenu>
         <el-submenu index="3">
           <template slot="title">综测成绩</template>

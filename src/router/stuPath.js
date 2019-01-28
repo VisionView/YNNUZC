@@ -35,6 +35,14 @@ export default [
           auth: false
         },
         component: () => import('@/views/students/evaluation/sself.vue')
+      },
+      {
+        path: 'evidence',
+        name: 'evidence',
+        meta: {
+          auth: false
+        },
+        component: () => import('@/views/students/evaluation/sevidence.vue')
       }
     ]
   }
