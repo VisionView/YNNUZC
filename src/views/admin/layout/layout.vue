@@ -19,8 +19,9 @@ import HomeAside from './components/Aside'
 import BreadCrumb from './components/Breadcrumb'
 import FullPage from '@/views/common/fullpage'
 import HomeUser from '@/views/common/User'
-import HomeMain from './../common/Main'
+import HomeMain from '@/views/common/Main'
 export default {
+  name: 'Layout',
   components: {
     HomeAside,
     BreadCrumb,

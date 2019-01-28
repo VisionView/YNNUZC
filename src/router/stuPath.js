@@ -1,8 +1,9 @@
 import Main from '@/views/common/main.vue'
+
 export default [
   {
-    path: '/stuInfo',
-    name: 'stuInfo',
+    path: 'info',
+    name: 'info',
     meta: {
       auth: false
     },
@@ -12,14 +13,15 @@ export default [
         path: 'sinfo',
         name: 'sinfo',
         meta: {
+          name: '学生个人信息',
           auth: false
         },
-        component: () => import('@/views/students/stuInfo/Sinfo.vue')
+        component: () => import('@/views/students/info/sinfo.vue')
       }
     ]
   },
   {
-    path: '/evaluation',
+    path: 'evaluation',
     name: 'evaluation',
     meta: {
       auth: false
@@ -32,7 +34,7 @@ export default [
         meta: {
           auth: false
         },
-        component: () => import('@/views/students/evaluation/Sself.vue')
+        component: () => import('@/views/students/evaluation/sself.vue')
       }
     ]
   }

@@ -13,12 +13,12 @@ export default [
       {
         path: 'index',
         name: '学院信息',
-        component: () => import('@/views/demo/info/Index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       },
       {
         path: 'index',
         name: '专业信息',
-        component: () => import('@/views/demo/info/Index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       }
     ]
   }

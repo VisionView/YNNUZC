@@ -159,7 +159,7 @@
         </tr>
       </table>
       <el-form-item>
-        <el-button type="primary" @click="onSubmitForm">提交表格</el-button>
+        <el-button type="primary" @click="onSubmitForm" class="btn-submit"><i class="el-icon-upload"></i> 提交表格</el-button>
       </el-form-item>
     </el-form>
     <div class="indicate">学生处管理科制</div>
@@ -196,6 +196,9 @@ export default {
       min-width 200px
       .stu-item
         font-weight 600
+  .btn-submit
+    width 100%
+    margin-top 15px
   .indicate
     margin 20px 0
     text-align right
