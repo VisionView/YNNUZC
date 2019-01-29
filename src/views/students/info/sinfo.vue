@@ -17,7 +17,7 @@
         <th>民族</th>
         <td>信息学院</td>
         <th>政治面貌</th>
-        <td>软件工程</td>
+        <td>团员</td>
         <th></th>
         <td></td>
       </tr>
@@ -30,9 +30,6 @@
         <td>1643205000XXX</td>
       </tr>
     </table>
-    <!-- 个人信息 -->
-    <!-- 、民族folk -->
-    <!-- 政治面貌 -->
   </el-card>
 </template>
 <style lang="stylus" scoped>

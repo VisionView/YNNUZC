@@ -28,6 +28,7 @@ export default [
       auth: false
     },
     component: Main,
+    redirect: 'evaluation/self',
     children: [
       {
         path: 'self',
@@ -44,6 +45,33 @@ export default [
           auth: false
         },
         component: () => import('@/views/students/evaluation/sevidence.vue')
+      }
+    ]
+  },
+  {
+    path: 'grade',
+    name: 'grade',
+    meta: {
+      auth: false
+    },
+    component: Main,
+    redirect: 'grade/sgrade',
+    children: [
+      {
+        path: 'sgrade',
+        name: 'sgrade',
+        meta: {
+          auth: false
+        },
+        component: () => import('@/views/students/grade/sgrade.vue')
+      },
+      {
+        path: 'sgrade_all',
+        name: 'sgrade_all',
+        meta: {
+          auth: false
+        },
+        component: () => import('@/views/students/grade/sallgrade.vue')
       }
     ]
   }
