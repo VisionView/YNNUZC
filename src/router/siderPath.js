@@ -10,6 +10,7 @@ export default [
       auth: false
     },
     component: Main,
+    redirect: 'charts/index',
     children: [
       {
         path: 'index',
@@ -49,6 +50,7 @@ export default [
       auth: false
     },
     component: Main,
+    redirect: 'baseinfo/icollege',
     children: [
       {
         path: 'icollege',

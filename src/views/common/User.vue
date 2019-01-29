@@ -2,7 +2,7 @@
   <div>
     <el-dropdown trigger="click">
       <div>
-        <img :src="user.img" class="user-img" alt="用户头像" title="用户头像">
+        <img :src="user.img" class="user-img">
         <i class="el-icon-caret-bottom el-icon--right dropdown-icon"></i>
       </div>
       <el-dropdown-menu slot="dropdown">

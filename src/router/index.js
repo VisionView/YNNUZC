@@ -22,7 +22,7 @@ export default new Router({
     {
       path: '/admin',
       name: 'admin',
-      redirect: '/admin/charts/index',
+      redirect: '/admin/charts',
       meta: {
         name: '首页',
         auth: false // 这个字段以后用来验证必须登录才能查看
@@ -43,7 +43,7 @@ export default new Router({
     {
       path: '/student',
       name: 'student',
-      redirect: '/student/info/sinfo',
+      redirect: '/student/info',
       meta: {
         name: '学生端首页',
         auth: false

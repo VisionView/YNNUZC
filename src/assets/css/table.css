@@ -1,0 +1,19 @@
+.table {
+  width: 100%;
+  max-width: 100%;
+  background-color: transparent;
+  background-color: #fff;
+}
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+.table-bordered tr th,
+.table-bordered tr td {
+  height: 36px;
+  border: 1px solid #dee2e6;
+  text-align: center;
+  vertical-align: middle;
+}
+.table-bordered tr th {
+  width: 86px;
+}

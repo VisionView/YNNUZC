@@ -8,6 +8,7 @@ export default [
       auth: false
     },
     component: Main,
+    redirect: 'info/sinfo',
     children: [
       {
         path: 'sinfo',

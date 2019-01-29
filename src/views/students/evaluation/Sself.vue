@@ -204,7 +204,7 @@ export default {
     text-align right
 .form-table td
   max-width 72px
-  border 1px solid #ccc
+  border 1px solid #dee2e6
   padding 5px
   line-height 24px
   text-align center
@@ -212,7 +212,7 @@ export default {
 .form-table
   width 100%
   margin 15px 0
-  border 1px solid #ccc
+  border 1px solid #dee2e6
   .form-title
     width 30px
     font-weight bold

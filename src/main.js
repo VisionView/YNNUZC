@@ -7,6 +7,7 @@ import router from './router'
 import echarts from 'echarts'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'css/reset.css'
+import 'css/table.css'
 import 'css/elementUI.css'
 
 Vue.use(VueRouter)
