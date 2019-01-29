@@ -45,11 +45,11 @@
           <td rowspan="2" colspan="2">扣分原因</td>
         </tr>
         <tr>
-          <td>政治表现</td>
-          <td>遵纪守法</td>
-          <td>社会公德</td>
-          <td>个人品质</td>
-          <td>人际关系</td>
+          <td>体育课出勤</td>
+          <td>体育活动出勤</td>
+          <td>①</td>
+          <td>②</td>
+          <td>③</td>
         </tr>
         <tr>
           <td>1</td>
