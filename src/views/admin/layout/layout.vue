@@ -16,10 +16,10 @@
 </template>
 <script>
 import HomeAside from './components/Aside'
-import BreadCrumb from './components/Breadcrumb'
+import BreadCrumb from './components/breadcrumb'
 import FullPage from '@/views/common/fullpage'
 import HomeUser from '@/views/common/User'
-import HomeMain from '@/views/common/Main'
+import HomeMain from './../common/main'
 export default {
   name: 'Layout',
   components: {
