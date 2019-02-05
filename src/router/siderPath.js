@@ -1,14 +1,16 @@
 import Main from '@/views/common/main.vue'
+
 export default [
   {
-    path: '/statistics',
-    name: 'statistics',
+    path: 'charts',
+    name: 'charts',
     meta: {
       name: '信息统计',
-      icon: 'iconfont icon-baobiao', // 用来存放字体图标
+      icon: 'iconfont icon-baobiao',
       auth: false
     },
     component: Main,
+    redirect: 'charts/index',
     children: [
       {
         path: 'index',
@@ -17,30 +19,30 @@ export default [
           name: '学院信息统计',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       },
       {
-        path: 'index',
-        name: 'index',
+        path: 'cmajor',
+        name: 'cmajor',
         meta: {
           name: '专业信息统计',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       },
       {
-        path: 'index',
-        name: 'index',
+        path: 'cedit',
+        name: 'cedit',
         meta: {
           name: '基本信息管理',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       }
     ]
   },
   {
-    path: '/baseinfo',
+    path: 'baseinfo',
     name: 'baseinfo',
     meta: {
       name: '基本信息',
@@ -48,47 +50,48 @@ export default [
       auth: false
     },
     component: Main,
+    redirect: 'baseinfo/icollege',
     children: [
       {
-        path: 'college',
-        name: 'college',
+        path: 'icollege',
+        name: 'icollege',
         meta: {
           name: '学院信息',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       },
       {
-        path: 'specialty',
-        name: 'specialty',
+        path: 'imajor',
+        name: 'imajor',
         meta: {
           name: '专业信息',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       },
       {
-        path: 'class',
-        name: 'class',
+        path: 'iclass',
+        name: 'iclass',
         meta: {
           name: '班级信息',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       },
       {
-        path: 'students',
-        name: 'students',
+        path: 'istudents',
+        name: 'istudents',
         meta: {
           name: '学生信息',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       }
     ]
   },
   {
-    path: '/score',
+    path: 'score',
     name: 'score',
     meta: {
       name: '测评单元审议评分',
@@ -98,27 +101,27 @@ export default [
     component: Main,
     children: [
       {
-        path: 'check',
-        name: 'check',
+        path: 'scheck',
+        name: 'scheck',
         meta: {
           name: '审核学生自评信息(0.3)',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       },
       {
-        path: 'review',
-        name: 'review',
+        path: 'sreview',
+        name: 'sreview',
         meta: {
           name: '定性考评(0.7)',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       }
     ]
   },
   {
-    path: '/verify',
+    path: 'verify',
     name: 'verify',
     meta: {
       name: '综测审核',
@@ -134,7 +137,7 @@ export default [
           name: '学校审核',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       },
       {
         path: 'vcollege',
@@ -143,7 +146,7 @@ export default [
           name: '学院审核',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       },
       {
         path: 'vclass',
@@ -152,12 +155,12 @@ export default [
           name: '班级审核',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       }
     ]
   },
   {
-    path: '/result',
+    path: 'result',
     name: 'result',
     meta: {
       name: '综测结果',
@@ -167,18 +170,18 @@ export default [
     component: Main,
     children: [
       {
-        path: 'all',
-        name: 'all',
+        path: 'rall',
+        name: 'rall',
         meta: {
           name: '全校综测成绩',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       }
     ]
   },
   {
-    path: '/manager',
+    path: 'manager',
     name: 'manager',
     meta: {
       name: '管理员权限',
@@ -194,7 +197,7 @@ export default [
           name: '学校管理员',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       },
       {
         path: 'mcollege',
@@ -203,7 +206,7 @@ export default [
           name: '学院管理员',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       },
       {
         path: 'mclass',
@@ -212,7 +215,7 @@ export default [
           name: '班级管理员',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       },
       {
         path: 'mevaluator',
@@ -221,7 +224,7 @@ export default [
           name: '审议评分小组成员',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       },
       {
         path: 'msystem',
@@ -230,7 +233,7 @@ export default [
           name: '系统管理员',
           auth: false
         },
-        component: () => import('@/views/demo/info/index.vue')
+        component: () => import('@/views/admin/info/index.vue')
       }
     ]
   }

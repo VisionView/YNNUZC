@@ -22,11 +22,11 @@
   </div>
 </template>
 <script>
-import siderPath from '@/router/siderPath.js'
+import SiderPath from '@/router/siderPath.js'
 export default {
   data () {
     return {
-      Routers: siderPath
+      Routers: SiderPath
     }
   },
   props: {

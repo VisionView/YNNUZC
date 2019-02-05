@@ -45,11 +45,11 @@
           <td rowspan="2" colspan="2">扣分原因</td>
         </tr>
         <tr>
-          <td>政治表现</td>
-          <td>遵纪守法</td>
-          <td>社会公德</td>
-          <td>个人品质</td>
-          <td>人际关系</td>
+          <td>体育课出勤</td>
+          <td>体育活动出勤</td>
+          <td>①</td>
+          <td>②</td>
+          <td>③</td>
         </tr>
         <tr>
           <td>1</td>
@@ -159,7 +159,7 @@
         </tr>
       </table>
       <el-form-item>
-        <el-button type="primary" @click="onSubmitForm">提交表格</el-button>
+        <el-button type="primary" @click="onSubmitForm" class="btn-submit"><i class="el-icon-upload"></i> 提交表格</el-button>
       </el-form-item>
     </el-form>
     <div class="indicate">学生处管理科制</div>
@@ -196,12 +196,15 @@ export default {
       min-width 200px
       .stu-item
         font-weight 600
+  .btn-submit
+    width 100%
+    margin-top 15px
   .indicate
     margin 20px 0
     text-align right
 .form-table td
   max-width 72px
-  border 1px solid #ccc
+  border 1px solid #dee2e6
   padding 5px
   line-height 24px
   text-align center
@@ -209,7 +212,7 @@ export default {
 .form-table
   width 100%
   margin 15px 0
-  border 1px solid #ccc
+  border 1px solid #dee2e6
   .form-title
     width 30px
     font-weight bold

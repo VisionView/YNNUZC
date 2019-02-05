@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Layout from '@/views/layout/Layout'
-import sLayout from '@/views/students/layout/sLayout'
+import Layout from '@/views/admin/layout/layout'
+import sLayout from '@/views/students/layout/slayout'
 import siderPath from './siderPath.js'
 import otherPath from './otherPath.js'
 import stuPath from './stuPath.js'
@@ -9,6 +9,7 @@ import stuPath from './stuPath.js'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/login',
@@ -20,8 +21,8 @@ export default new Router({
     },
     {
       path: '/admin',
-      name: 'Layout',
-      redirect: '/statistics/index',
+      name: 'admin',
+      redirect: '/admin/charts',
       meta: {
         title: '基本信息管理',
         icon: 'el-icon-sold-out',
@@ -34,7 +35,7 @@ export default new Router({
     },
     {
       path: '/admin',
-      name: 'Layout',
+      name: 'admin',
       meta: {
         name: '首页',
         auth: false
@@ -45,7 +46,7 @@ export default new Router({
     {
       path: '/student',
       name: 'student',
-      redirect: '/stuInfo/sinfo',
+      redirect: '/student/info',
       meta: {
         name: '学生端首页',
         auth: false
