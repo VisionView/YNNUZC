@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-container">
     <div class="div-left">
     <el-steps direction="vertical" :active="1">
       <el-step title="品德基础素质"></el-step>
@@ -31,11 +31,11 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-.div-left
-  margin-top 50px
-  height 400px
-  float left
-.div-right
-  float left
-  margin-left 100px
+.main-container
+  display flex
+  .div-left
+    margin-top 50px
+    height 400px
+  .div-right
+    margin-left 100px
 </style>
