@@ -3,16 +3,16 @@
     <el-header>
       <div class="sys-title"></div>
       <el-menu mode="horizontal" :router="true">
-        <el-menu-item index="/stuInfo/sinfo">个人信息</el-menu-item>
+        <el-menu-item index="/student/info/sinfo">个人信息</el-menu-item>
         <el-submenu index="2">
           <template slot="title">自评管理</template>
-          <el-menu-item index="/evaluation/self">填写自评信息</el-menu-item>
-          <el-menu-item index="2-2">提交获奖证书</el-menu-item>
+          <el-menu-item index="/student/evaluation/self">填写自评信息</el-menu-item>
+          <el-menu-item index="/student/evaluation/evidence">提交获奖证书</el-menu-item>
         </el-submenu>
         <el-submenu index="3">
           <template slot="title">综测成绩</template>
-          <el-menu-item index="2-1">个人综测成绩</el-menu-item>
-          <el-menu-item index="2-2">历年综测成绩</el-menu-item>
+          <el-menu-item index="/student/grade/sgrade">个人综测成绩</el-menu-item>
+          <el-menu-item index="/student/grade/sgrade_all">历年综测成绩</el-menu-item>
         </el-submenu>
         <el-menu-item index="4" disabled>问题反馈</el-menu-item>
       </el-menu>
@@ -26,15 +26,15 @@
 </template>
 <script>
 import FullPage from '@/views/common/fullpage'
-import HomeUser from '@/views/common/User'
+import HomeUser from '@/views/common/user'
 export default {
+  name: 'Slayout',
   components: {
     FullPage,
     HomeUser
   }
 }
 </script>
-
 <style lang="stylus" scoped>
 .el-header
   display flex

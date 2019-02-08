@@ -68,4 +68,6 @@ table {
 	margin-right: 10px;
 	cursor: pointer;
 }
-    
+.el-upload-dragger {
+	width: 960px;
+}

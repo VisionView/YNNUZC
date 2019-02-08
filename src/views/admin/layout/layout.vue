@@ -15,12 +15,13 @@
   </el-container>
 </template>
 <script>
-import HomeAside from './components/Aside'
+import HomeAside from './components/aside'
 import BreadCrumb from './components/breadcrumb'
 import FullPage from '@/views/common/fullpage'
-import HomeUser from '@/views/common/User'
-import HomeMain from './../common/main'
+import HomeUser from '@/views/common/user'
+import HomeMain from '@/views/common/main'
 export default {
+  name: 'Layout',
   components: {
     HomeAside,
     BreadCrumb,
