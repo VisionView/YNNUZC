@@ -1,7 +1,7 @@
 <template>
   <el-card>
     <el-row>
-      <el-col :span="24" v-loading="loading">
+      <el-col :span="24">
         <colleges-chart/>
       </el-col>
       <el-col :span="8">
@@ -31,8 +31,7 @@ export default {
   },
   data () {
     return {
-      loading: true
-      // loading: false
+
     }
   },
   methods: {

@@ -24,10 +24,13 @@ export default new Router({
       name: 'admin',
       redirect: '/admin/charts',
       meta: {
+        title: '基本信息管理',
+        icon: 'el-icon-sold-out',
         name: '首页',
         auth: false // 这个字段以后用来验证必须登录才能查看
       },
       component: Layout,
+      hidden: false,
       children: siderPath
     },
     {

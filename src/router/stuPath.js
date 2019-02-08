@@ -36,7 +36,18 @@ export default [
         meta: {
           auth: false
         },
-        component: () => import('@/views/students/evaluation/sself.vue')
+        component: () => import('@/views/students/evaluation/sself.vue'),
+        redirect: 'self/moralitybase',
+        children: [
+          {
+            path: 'moralitybase',
+            name: 'moralitybase',
+            meta: {
+              auth: false
+            },
+            component: () => import('@/views/students/evaluation/components/moralitybase.vue')
+          }
+        ]
       },
       {
         path: 'evidence',
