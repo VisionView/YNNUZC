@@ -1,0 +1,33 @@
+<template>
+  <div>
+    <tr><td colspan="12" class="small-title">(四)职业综合素质</td></tr>
+        <tr>
+          <td>师范生技能</td>
+          <td>加分原因</td>
+          <td>职业技术能力</td>
+          <td>加分原因</td>
+          <td>外语能力</td>
+          <td>加分原因</td>
+          <td>计算机运用能力</td>
+          <td>加分原因</td>
+          <td>体育能力</td>
+          <td>加分原因</td>
+          <td>艺术活动能力</td>
+          <td>加分原因</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+        </tr>
+  </div>
+</template>

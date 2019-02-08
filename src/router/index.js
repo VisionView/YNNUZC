@@ -1,252 +1,70 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
-import Layout from '@/views/layout/Layout'
-
-import Demo4 from '@/views/demo/demo4'
+import Layout from '@/views/admin/layout/layout'
+import sLayout from '@/views/students/layout/slayout'
+import siderPath from './siderPath.js'
+import otherPath from './otherPath.js'
+import stuPath from './stuPath.js'
 
 Vue.use(Router)
+
 export default new Router({
+  mode: 'history',
   routes: [
     {
-      path: '/',
-      component: Layout,
-      hidden: true,
-      redirect: '/home',
-      name: 'Home',
-      children: [
-        {
-          path: 'home',
-          component: () => import('@/views/demo/charts')
-        }]
-    },
-    {
-      path: '/',
-      component: Layout,
-      hidden: false,
-      name: 'charts',
+      path: '/login',
+      name: 'login',
       meta: {
-        title: '信息统计',
-        icon: 'el-icon-sold-out'
+        name: '登录'
       },
-      children: [
-        {
-          path: 'demo1',
-          name: 'Demo1',
-          component: () => import('@/views/demo/charts'),
-          meta: { title: '学生信息统计' }
-        },
-        {
-          path: 'demo4',
-          name: 'Demo4',
-          component: Demo4,
-          meta: { title: '学院信息统计' }
-        },
-        {
-          path: 'demo4',
-          name: 'Demo4',
-          component: Demo4,
-          meta: { title: '专业信息统计' }
-        },
-        {
-          path: 'demo4',
-          name: 'Demo4',
-          component: Demo4,
-          meta: { title: '统计信息管理' }
-        }
-      ]
+      component: () => import('@/views/login/login.vue')
     },
     {
-      path: '/',
-      component: Layout,
-      hidden: false,
-      name: 'info',
+      path: '/admin',
+      name: 'admin',
+      redirect: '/admin/charts',
       meta: {
-        title: '基本信息',
-        icon: 'el-icon-sold-out'
+        title: '基本信息管理',
+        icon: 'el-icon-sold-out',
+        name: '首页',
+        auth: false // 这个字段以后用来验证必须登录才能查看
       },
-      children: [
-        {
-          path: 'table',
-          name: 'table',
-          component: () => import('@/views/demo/list'),
-          meta: { title: '学院信息' }
-        },
-        {
-          path: 'demo11',
-          name: 'Demo4',
-          component: Demo4,
-          meta: { title: '专业信息' }
-        },
-        {
-          path: 'demo4',
-          name: 'Demo4',
-          component: Demo4,
-          meta: { title: '班级信息' }
-        },
-        {
-          path: 'demo2',
-          name: 'Demo4',
-          component: Demo4,
-          meta: { title: '学生信息' }
-        }
-      ]
-    },
-    {
-      path: '/',
       component: Layout,
       hidden: false,
-      name: 'grade',
+      children: siderPath
+    },
+    {
+      path: '/admin',
+      name: 'admin',
       meta: {
-        title: '测评单元审议',
-        icon: 'el-icon-sold-out'
+        name: '首页',
+        auth: false
       },
-      children: [
-        {
-          path: 'check',
-          name: 'Demo4',
-          component: Demo4,
-          meta: { title: '审核学生自评信息' }
-        },
-        {
-          path: 'demo4',
-          name: 'nature',
-          component: () => import('@/views/evaluate/nature'),
-          meta: { title: '定性考评' }
-        },
-        {
-          path: 'demo4',
-          name: 'nature',
-          component: () => import('@/views/evaluate/nature'),
-          meta: { title: '定量考评' }
-        }
-      ]
+      component: Layout,
+      children: otherPath
     },
     {
-      path: '/',
-      component: Layout,
-      hidden: false,
-      name: 'step',
+      path: '/student',
+      name: 'student',
+      redirect: '/student/info',
       meta: {
-        title: '综测审核',
-        icon: 'el-icon-sold-out'
+        name: '学生端首页',
+        auth: false
       },
-      children: [
-        {
-          path: 'step',
-          name: 'Step',
-          component: () => import('@/views/demo/step'),
-          meta: { title: '学校审核' }
-        },
-        {
-          path: 'demo4',
-          name: 'Demo4',
-          component: Demo4,
-          meta: { title: '学院审核' }
-        },
-        {
-          path: 'demo4',
-          name: 'Demo4',
-          component: Demo4,
-          meta: { title: '班级审核' }
-        }
-      ]
+      component: sLayout,
+      children: stuPath
     },
     {
-      path: '/',
-      component: Layout,
-      hidden: false,
-      name: 'rusults',
-      meta: {
-        title: '综测结果',
-        icon: 'el-icon-sold-out'
+      path: '/404',
+      name: '404',
+      mate: {
+        name: '404'
       },
-      children: [
-        {
-          path: 'result',
-          name: 'Result',
-          component: () => import('@/views/demo/result'),
-          meta: { title: '全校综测结果' }
-        },
-        {
-          path: 'result2',
-          name: 'Result2',
-          component: () => import('@/views/demo/result2'),
-          meta: { title: '学院综测结果' }
-        },
-        {
-          path: 'demo4',
-          name: 'Demo4',
-          component: Demo4,
-          meta: { title: '班级综测结果' }
-        }
-      ]
+      component: () => import('@/views/error/404.vue')
     },
     {
-      path: '/',
-      component: Layout,
-      hidden: false,
-      name: 'area',
-      meta: { title: '权限管理', icon: 'el-icon-sold-out' },
-      children: [
-        {
-          path: 'school',
-          name: 'School',
-          component: () => import('@/views/scope/school'),
-          meta: { title: '学校管理员' }
-        },
-        {
-          path: 'admin',
-          name: 'Admin',
-          component: () => import('@/views/demo/admin'),
-          meta: { title: '学院管理员' }
-        },
-        {
-          path: 'demo4',
-          name: 'Demo4',
-          component: Demo4,
-          meta: { title: '班级管理员' }
-        },
-        {
-          path: 'demo4',
-          name: 'Demo4',
-          component: Demo4,
-          meta: { title: '评议员' }
-        },
-        {
-          path: 'demo4',
-          name: 'Demo4',
-          component: Demo4,
-          meta: { title: '系统管理员' }
-        }
-      ]
-    },
-    {
-      path: 'external-link',
-      component: Layout,
-      hidden: false,
-      name: 'link',
-      meta: {
-        title: '外联',
-        icon: 'el-icon-sold-out'
-      },
-      children: [
-        {
-          path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-          meta: { title: 'GeekFun' }
-        }
-      ]
-    },
-    {
-      path: '/',
-      component: Layout,
-      hidden: true,
-      children: [
-        {
-          path: 'one/:id',
-          meta: { title: 'GeekFun' }
-        }
-      ]
+      path: '*',
+      redirect: '/404'
     }
   ]
 })

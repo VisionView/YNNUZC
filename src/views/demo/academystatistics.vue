@@ -1,22 +1,24 @@
 <template>
-  <el-card>
+  <div>
+    <el-card>
+    <div class="academy">信息学院</div>
     <el-row :gutter="20">
       <el-col :span="6">
         <div class="cart">
           <div class="desc">学生总人数</div>
-          <div class="num">32768 (人)</div>
+          <div class="num">800 (人)</div>
         </div>
       </el-col>
       <el-col :span="6">
         <div class="cart">
           <div class="desc">申报总人数</div>
-          <div class="num">27520 (人)</div>
+          <div class="num">600 (人)</div>
         </div>
       </el-col>
       <el-col :span="6">
         <div class="cart">
           <div class="desc">未申报总人数</div>
-          <div class="num">56 (人)</div>
+          <div class="num">200 (人)</div>
         </div>
       </el-col>
       <el-col :span="6">
@@ -39,10 +41,11 @@
     籍贯分布
     学院人数 -->
   </el-card>
+  </div>
 </template>
 <script>
 export default {
-  name: '',
+  name: 'AcademyStatistics',
   data () {
     return {
       sexNum: {
@@ -91,7 +94,7 @@ export default {
     twoChartInfo (twoChart) {
       let option = {
         title: {
-          text: '各学院人数',
+          text: '各专业人数',
           subtext: '模拟数据',
           x: 'center'
         },
@@ -101,13 +104,13 @@ export default {
         },
         xAxis: {
           type: 'category',
-          data: ['信息学院', '数学学院', '物电学院', '化工学院', '美术学院', '体育学院', '生科学院']
+          data: ['软件工程', '网络工程', '空间信息', '教育技术学', '计科A', '计科B']
         },
         yAxis: {
           type: 'value'
         },
         series: [{
-          data: [120, 200, 150, 80, 70, 110, 130],
+          data: [120, 200, 150, 80, 70, 110],
           type: 'bar'
         }]
       }
@@ -120,6 +123,9 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+.academy
+  font-size 25px
+  margin-bottom 10px
 .el-card
   .el-row
     margin-bottom 20px
