@@ -48,3 +48,7 @@ padding: 0;
 .el-menu.el-menu--horizontal {
   border-bottom: none
 }
+.el-step__icon,
+.el-step__title {
+  cursor: pointer;
+}
