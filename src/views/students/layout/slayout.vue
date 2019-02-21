@@ -20,7 +20,7 @@
       <home-user/>
     </el-header>
     <el-main>
-      <router-view/>
+      <router-view style="height: 100%;"/>
     </el-main>
   </el-container>
 </template>
@@ -56,4 +56,6 @@ export default {
       color #eee
 .screenfull
   color #fff
+.el-main
+  height 100%
 </style>

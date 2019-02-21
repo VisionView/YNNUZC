@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <data>
+  </data>
+  <chart type="Dataset" modle="datasetdefault" theme="light">
+    {
+     // 默认色板
+    color: [
+      '#009688','#1E9FFF','#5FB878','#FFB980','#D87A80',
+      '#8d98b3','#e5cf0d','#97b552','#95706d','#dc69aa',
+      '#07a2a4','#9a7fd1','#588dd5','#f5994e','#c05050',
+      '#59678c','#c9ab00','#7eb00a','#6f5553','#c14089'
+    ],
+    title:{
+    	 textStyle: {
+	        fontWeight: 'normal',
+	        color: '#666'      // 主标题文字颜色
+	     },
+    	 text: '服务器存储信息',
+    	 x: 'left'
+    },
+    legend: {},
+    tooltip: {},
+    dataset: {
+        source: [
+            ['product', 'disk1', 'disk2'],
+            ['未使用(GB)', 41.1, 30.4],
+            ['已使用(GB)', 86.5, 92.1]
+        ]
+    },
+    series: [{
+        name: 'C:',
+        type: 'pie',
+        radius: 60,
+        center: ['15%', '30%'],
+         encode: {
+            itemName: 'product',
+            value: 'disk1'
+        }
+    }, {
+        name: 'D:',
+        type: 'pie',
+        radius: 60,
+        center: ['45%', '30%'],
+        encode: {
+            itemName: 'product',
+            value: 'disk2'
+        }
+    }]
+}
+  </chart>
+  <script>
+  <![CDATA[
+  	function loadFilesystemInfo(){
+  		$.get('getFileSystemUsageAction', function (data) {
+  			 data = data.data;
+  			 if(typeof data.data == "string"){
+  			 	data = window.eval("("+data.data+")");
+  			 }
+  			 var source1 = ['product'];
+  			 var source2 = ['未使用(GB)'];
+  			 var source3 = ['已使用(GB)'];
+  			 var seriesS = [];
+  			 var left = 15, top = 30;
+  			 for(var m = 0; m < data.length; m++){
+  			 	var fser = data[m];
+  			 	source1.push(fser.devName);
+  			 	source2.push(fser.Free);
+  			 	source3.push(fser.Used);
+  			 	seriesS.push({
+			        name: fser.devName,
+			        type: 'pie',
+			        radius: 60,
+			        center: [left+'%', top+'%'],
+			         encode: {
+			            itemName: 'product',
+			            value: fser.devName
+			        }
+			    });
+			    if(m!=0 && m % 2 == 0){
+			    	left = 15;
+			    }else{
+			    	left += 30;
+			    }
+			    if(m!=0 && m % 2 == 0){
+			    	top += 45;
+			    }
+  			 }
+  			 myChart.setOption({
+ 			 	dataset: {
+			        source: [source1,source2,source3]
+			    },
+			    series: seriesS
+		    });
+		    delete data;
+  		});
+  	}
+  	loadFilesystemInfo();
+  ]]>
+  </script>
+</root>
