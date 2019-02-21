@@ -20,7 +20,7 @@
       <home-user/>
     </el-header>
     <el-main>
-      <router-view style="height: 100%;"/>
+      <router-view class="all-page"></router-view>
     </el-main>
   </el-container>
 </template>
