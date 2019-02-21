@@ -1,3 +1,3 @@
 <template>
-  <div>评估结果</div>
+  <div>预览评估结果</div>
 </template>
