@@ -26,7 +26,7 @@
 </template>
 <script>
 import FullPage from '@/views/common/fullpage'
-import HomeUser from '@/views/common/user'
+import HomeUser from './components/user'
 export default {
   name: 'Slayout',
   components: {

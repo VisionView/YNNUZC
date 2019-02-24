@@ -135,6 +135,7 @@ export default [
         name: 'vschool',
         meta: {
           name: '学校审核',
+          level: 1,
           auth: false
         },
         component: () => import('@/views/admin/info/index.vue')
@@ -144,6 +145,7 @@ export default [
         name: 'vcollege',
         meta: {
           name: '学院审核',
+          level: 2,
           auth: false
         },
         component: () => import('@/views/admin/info/index.vue')
@@ -153,6 +155,7 @@ export default [
         name: 'vclass',
         meta: {
           name: '班级审核',
+          level: 3,
           auth: false
         },
         component: () => import('@/views/admin/info/index.vue')
@@ -174,6 +177,27 @@ export default [
         name: 'rall',
         meta: {
           name: '全校综测成绩',
+          level: 1,
+          auth: false
+        },
+        component: () => import('@/views/admin/info/index.vue')
+      },
+      {
+        path: 'rall',
+        name: 'rall',
+        meta: {
+          name: '全院综测成绩',
+          level: 2,
+          auth: false
+        },
+        component: () => import('@/views/admin/info/index.vue')
+      },
+      {
+        path: 'rall',
+        name: 'rall',
+        meta: {
+          name: '班级综测成绩',
+          level: 3,
           auth: false
         },
         component: () => import('@/views/admin/info/index.vue')
@@ -195,6 +219,7 @@ export default [
         name: 'mschool',
         meta: {
           name: '学校管理员',
+          level: 1,
           auth: false
         },
         component: () => import('@/views/admin/info/index.vue')
@@ -204,6 +229,7 @@ export default [
         name: 'mcollege',
         meta: {
           name: '学院管理员',
+          level: 1,
           auth: false
         },
         component: () => import('@/views/admin/info/index.vue')
@@ -213,6 +239,7 @@ export default [
         name: 'mclass',
         meta: {
           name: '班级管理员',
+          level: 1,
           auth: false
         },
         component: () => import('@/views/admin/info/index.vue')
@@ -222,6 +249,7 @@ export default [
         name: 'mevaluator',
         meta: {
           name: '审议评分小组成员',
+          level: 1,
           auth: false
         },
         component: () => import('@/views/admin/info/index.vue')
@@ -231,6 +259,7 @@ export default [
         name: 'msystem',
         meta: {
           name: '系统管理员',
+          level: 1,
           auth: false
         },
         component: () => import('@/views/admin/info/index.vue')
@@ -238,3 +267,27 @@ export default [
     ]
   }
 ]
+
+// function getBoolean (num) {
+//   let scope = localStorage.getItem('scope')
+//   let hidden = null
+//   let level = null
+//   if (scope < 5) {
+//     if(scope == 1 || scope == 4) {
+//       level = 1
+//     } else if (scope == 2) {
+//       level = 2
+//     } else if (scope == 3) {
+//       level = 3
+//     }
+//     if (level > num) {
+//       hidden = true // 隐藏
+//     } else if (level = num) {
+//       hidden = false
+//     }
+//   } else {
+//     hidden = true
+//   }
+//   return hidden
+//   console.log(hidden)
+// }

@@ -2,12 +2,12 @@
   <div>
     <el-dropdown trigger="click">
       <div>
-        <img :src="user.img" class="user-img">
+        <img src="@/assets/img/user.jpg" class="user-img">
         <i class="el-icon-caret-bottom el-icon--right dropdown-icon"></i>
       </div>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item>个人信息</el-dropdown-item>
-        <el-dropdown-item>注 销</el-dropdown-item>
+        <el-dropdown-item @click="stuLoginout">注 销</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
   </div>
@@ -16,9 +16,25 @@
 export default {
   data () {
     return {
-      user: {
-        img: 'https://raw.githubusercontent.com/VisionView/lib/master/img/user.jpg'
-      }
+      Authorization: localStorage.getItem('token'),
+      user: {}
+    }
+  },
+  methods: {
+    stuLoginout () {
+      this.$axios
+      .post('/api/zongce/student/loginout', {
+        Authorization: this.Authorization
+      })
+      .then(res => {
+        Message({
+          showClose: true,
+          message: res.message,
+          type: 'warning'
+        })
+        this.$router.push({ path: '/login' })
+      })
+      .catch(res => {})
     }
   }
 }

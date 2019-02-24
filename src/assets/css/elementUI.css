@@ -52,3 +52,19 @@ padding: 0;
 .el-step__title {
   cursor: pointer;
 }
+.el-dialog {
+  min-width: 500px;
+}
+.el-textarea__inner {
+  min-height: 80px !important;
+  resize: none;
+}
+.el-upload,
+.el-upload-dragger {
+  width: 100%;
+}
+
+.el-tabs__item {
+  width: 180px;
+  text-align: center
+}
