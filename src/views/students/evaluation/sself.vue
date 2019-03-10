@@ -28,22 +28,22 @@ export default {
   },
   methods: {
     clickSteps (index) {
-      if (index == this.active) {
+      if (index === this.active) {
         this.$message({
           message: '警告，已经在当前步骤，不需要跳转!',
           type: 'warning'
-        });
+        })
       } else if (index <= this.finashiActive) {
         switch (index) {
-          case 0: Bus.$emit('val', index); this.$router.push({ path: 'moralitybase'}); break;
-          case 1: Bus.$emit('val', index); this.$router.push({ path: 'bodybase'}); break;
-          case 2: Bus.$emit('val', index); this.$router.push({ path: 'moralityimprove'}); break;
-          case 3: Bus.$emit('val', index); this.$router.push({ path: 'societypractice'}); break;
-          case 4: Bus.$emit('val', index); this.$router.push({ path: 'techinovation'}); break;
-          case 5: Bus.$emit('val', index); this.$router.push({ path: 'professionalcomprehensive'}); break;
+          case 0: Bus.$emit('val', index); this.$router.push({ path: 'moralitybase' }); break
+          case 1: Bus.$emit('val', index); this.$router.push({ path: 'bodybase' }); break
+          case 2: Bus.$emit('val', index); this.$router.push({ path: 'moralityimprove' }); break
+          case 3: Bus.$emit('val', index); this.$router.push({ path: 'societypractice' }); break
+          case 4: Bus.$emit('val', index); this.$router.push({ path: 'techinovation' }); break
+          case 5: Bus.$emit('val', index); this.$router.push({ path: 'professionalcomprehensive' }); break
         }
       } else {
-        this.$message.error('错误，当前点击步骤之前有没完成的步骤!');
+        this.$message.error('错误，当前点击步骤之前有没完成的步骤!')
       }
     }
   },
@@ -56,7 +56,7 @@ export default {
         this.finashiActive = res
       }
     })
-    this.$router.push({ path: 'moralitybase'})
+    this.$router.push({ path: 'moralitybase' })
   }
 }
 </script>

@@ -43,14 +43,14 @@ export default {
   methods: {
     prevent () {
       Bus.$emit('val', this.active - 2)
-      if (this.active > 6) this.active = 0;
-      this.$router.push({ path: 'bodybase'})
+      if (this.active > 6) this.active = 0
+      this.$router.push({ path: 'bodybase' })
     },
     next () {
       Bus.$emit('val', this.active)
       Bus.$emit('finishAct', this.active)
-      if (this.active > 6) this.active = 0;
-      this.$router.push({ path: 'societypractice'})
+      if (this.active > 6) this.active = 0
+      this.$router.push({ path: 'societypractice' })
     }
   }
 }

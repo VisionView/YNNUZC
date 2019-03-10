@@ -53,14 +53,14 @@ export default {
   methods: {
     prevent () {
       Bus.$emit('val', this.active - 2)
-      if (this.active > 6) this.active = 0;
-      this.$router.push({ path: 'moralitybase'})
+      if (this.active > 6) this.active = 0
+      this.$router.push({ path: 'moralitybase' })
     },
     next () {
       Bus.$emit('val', this.active)
       Bus.$emit('finishAct', this.active)
-      if (this.active > 6) this.active = 0;
-      this.$router.push({ path: 'moralityimprove'})
+      if (this.active > 6) this.active = 0
+      this.$router.push({ path: 'moralityimprove' })
     }
   }
 }
