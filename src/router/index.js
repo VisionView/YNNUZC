@@ -20,6 +20,14 @@ export default new Router({
       component: () => import('@/views/login/login.vue')
     },
     {
+      path: '/login2',
+      name: 'login2',
+      meta: {
+        name: '登录'
+      },
+      component: () => import('@/views/login/login2.vue')
+    },
+    {
       path: '/admin',
       name: 'admin',
       redirect: '/admin/charts',

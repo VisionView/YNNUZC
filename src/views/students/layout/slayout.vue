@@ -20,13 +20,13 @@
       <home-user/>
     </el-header>
     <el-main>
-      <router-view style="height: 100%;"/>
+      <router-view class="all-page"></router-view>
     </el-main>
   </el-container>
 </template>
 <script>
 import FullPage from '@/views/common/fullpage'
-import HomeUser from '@/views/common/user'
+import HomeUser from './components/user'
 export default {
   name: 'Slayout',
   components: {

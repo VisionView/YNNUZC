@@ -11,7 +11,7 @@
       </el-steps>
     </div>
     <el-card>
-      <router-view/>
+      <router-view class="all-page"></router-view>
     </el-card>
   </div>
 </template>
