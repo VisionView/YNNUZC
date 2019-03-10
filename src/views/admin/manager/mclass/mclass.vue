@@ -33,7 +33,7 @@
       <el-table-column prop="faculty_id" label="学院" align="center"></el-table-column>
       <el-table-column prop="class_id" label="班级" align="center"></el-table-column>
       <el-table-column fixed="right" label="操作" width="220" align="center">
-        <template slot-scope="scope">
+        <template>
           <!-- <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button> -->
           <el-button type="primary" size="mini">查看</el-button>
           <el-button type="warning" size="mini">编辑</el-button>
@@ -55,9 +55,6 @@
         <el-form-item label="学院">
           <el-input v-model="addMachoolForm.faculty_id"></el-input>
         </el-form-item>
-        <!-- <el-form-item label="班级">
-          <el-input v-model="addMachoolForm.class_id"></el-input>
-        </el-form-item> -->
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="showAddMclassDialog = false">取 消</el-button>
