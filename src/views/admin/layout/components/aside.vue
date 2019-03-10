@@ -40,11 +40,11 @@ export default {
       let hidden = null
       let level = null
       if (scope < 5) {
-        if(scope == 1 || scope == 4) {
+        if (scope === 1 || scope === 4) {
           level = 1
-        } else if (scope == 2) {
+        } else if (scope === 2) {
           level = 2
-        } else if (scope == 3) {
+        } else if (scope === 3) {
           level = 3
         }
         if (level > num) {

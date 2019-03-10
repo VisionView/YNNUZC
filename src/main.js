@@ -5,7 +5,6 @@ import store from './store'
 import App from './App'
 import router from './router'
 import echarts from 'echarts'
-import axios from 'axios'
 import Vuex from 'vuex'
 import './utils/Axios'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -23,7 +22,7 @@ Vue.config.productionTip = false
 
 // 路由拦截器
 router.beforeEach(({meta, path}, from, next) => {
-  if(!localStorage.getItem('token') && path !== '/login') {
+  if (!localStorage.getItem('token') && path !== '/login') {
     return next({ path: '/login' })
   } else {
     next()

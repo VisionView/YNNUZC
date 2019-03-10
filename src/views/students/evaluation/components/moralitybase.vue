@@ -42,15 +42,12 @@
             <div class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
           </el-upload>
         </el-form>
-        <!-- 
-        
-        证明材料
+        <!-- 证明材料
         <el-upload drag action="https://jsonplaceholder.typicode.com/posts/" multiple>
           <i class="el-icon-upload"></i>
           <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
           <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
-        </el-upload>
-         -->
+        </el-upload>-->
          <span slot="footer" class="dialog-footer">
           <el-button @click="MoreData = false">取 消</el-button>
           <el-button type="primary" @click="submitData">确 定</el-button>

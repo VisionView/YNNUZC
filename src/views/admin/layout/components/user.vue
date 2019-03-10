@@ -23,13 +23,13 @@ export default {
   methods: {
     teaLogout () {
       this.$axios
-      .post('/api/zongce/admin/loginout', {
-        Authorization: this.Authorization
-      })
-      .then(res => {
-        this.$router.push({ path: '/login' })
-      })
-      .catch(res => {})
+        .post('/api/zongce/admin/loginout', {
+          Authorization: this.Authorization
+        })
+        .then(res => {
+          this.$router.push({ path: '/login' })
+        })
+        .catch(res => {})
     }
   }
 }

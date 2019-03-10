@@ -40,8 +40,6 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
-import { mapMutations } from 'vuex'
 export default {
   data () {
     let validateName = (rule, value, callback) => {
@@ -54,7 +52,7 @@ export default {
     return {
       stuLoginForm: {
         name: '1443103000244',
-        pwd: '104943',
+        pwd: '104943'
       },
       teaLoginForm: {
         name: '',

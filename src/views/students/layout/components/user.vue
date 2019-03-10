@@ -13,6 +13,7 @@
   </div>
 </template>
 <script>
+import { Message } from 'element-ui'
 export default {
   data () {
     return {
@@ -23,18 +24,18 @@ export default {
   methods: {
     stuLoginout () {
       this.$axios
-      .post('/api/zongce/student/loginout', {
-        Authorization: this.Authorization
-      })
-      .then(res => {
-        Message({
-          showClose: true,
-          message: res.message,
-          type: 'warning'
+        .post('/api/zongce/student/loginout', {
+          Authorization: this.Authorization
         })
-        this.$router.push({ path: '/login' })
-      })
-      .catch(res => {})
+        .then(res => {
+          Message({
+            showClose: true,
+            message: res.message,
+            type: 'warning'
+          })
+          this.$router.push({ path: '/login' })
+        })
+        .catch(res => {})
     }
   }
 }
