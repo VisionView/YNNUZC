@@ -68,27 +68,15 @@ export default {
   data () {
     return {
       moralityBbaseForm: {},
-      moreDataUpdate: {},
-      active: 1,
-      MoreData: false
+      active: 1
     }
   },
   methods: {
     next () {
       Bus.$emit('val', this.active)
       Bus.$emit('finishAct', this.active)
-      if (this.active > 6) this.active = 0;
-      this.$router.push({ path: 'bodybase'})
-    },
-    showMoreData () {
-      this.MoreData = true
-    },
-    submitData () {
-      this.MoreData = false
-    },
-    beforeupload (file) {
-      console.log(file)
-      console.log(file.name)
+      if (this.active > 6) this.active = 0
+      this.$router.push({ path: 'bodybase' })
     }
   }
 }
@@ -106,4 +94,3 @@ export default {
 .el-upload-dragger
   width 100% !important
 </style>
-
