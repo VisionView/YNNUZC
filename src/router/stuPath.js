@@ -86,7 +86,7 @@ export default [
               auth: false
             },
             component: () => import('@/views/students/evaluation/components/techinovation.vue')
-          },
+          }
         ]
       },
       {

@@ -36,12 +36,10 @@
         </el-tab-pane>
       </el-tabs>
     </div>
-    <div class="copyright">云南师范大学 &copy; 2018 - 极客范技术支持</div>
+    <div class="copyright">云南师范大学 &copy; 2018 - <span ref="YearDate"></span> 极客范技术支持</div>
   </div>
 </template>
 <script>
-import axios from 'axios'
-import { mapMutations } from 'vuex'
 export default {
   data () {
     let validateName = (rule, value, callback) => {
@@ -54,11 +52,11 @@ export default {
     return {
       stuLoginForm: {
         name: '1443103000244',
-        pwd: '104943',
+        pwd: '104943'
       },
       teaLoginForm: {
-        name: '',
-        pwd: ''
+        name: '1643205000167',
+        pwd: '0707'
       },
       rules: {
         name: [
@@ -73,6 +71,11 @@ export default {
     }
   },
   methods: {
+    getNowYear () {
+      const date = new Date()
+      const year = date.getFullYear()
+      this.$refs.YearDate.innerHTML = year
+    },
     stuLoginSubmit () {
       this.$axios
         .post('/api/zongce/student/login', {
@@ -80,7 +83,8 @@ export default {
           password: this.stuLoginForm.pwd
         })
         .then(res => {
-          localStorage.token = res.data
+          localStorage.setItem('token', res.data.token)
+          localStorage.setItem('scope', 6)
           this.$router.push({ path: '/student' })
         })
         .catch(res => {})
@@ -92,12 +96,15 @@ export default {
           password: this.teaLoginForm.pwd
         })
         .then(res => {
-          localStorage.token = res.data.token
-          localStorage.scope = res.data.scope
+          localStorage.setItem('token', res.data.token)
+          localStorage.setItem('scope', res.data.scope)
           this.$router.push({ path: '/admin' })
         })
         .catch(res => {})
     }
+  },
+  mounted () {
+    this.getNowYear()
   }
 }
 </script>

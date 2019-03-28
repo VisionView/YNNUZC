@@ -74,3 +74,8 @@ table {
 .all-page {
 	height: 100%;
 }
+
+.FormType {
+	font-weight: bold;
+	color: #409eff;
+}

@@ -7,7 +7,9 @@
       </div>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item>个人信息</el-dropdown-item>
-        <el-dropdown-item @click="teaLogout">注 销</el-dropdown-item>
+        <el-dropdown-item>
+          <div @click="teaLogout">退 出</div>
+        </el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
   </div>
@@ -22,14 +24,24 @@ export default {
   },
   methods: {
     teaLogout () {
-      this.$axios
-      .post('/api/zongce/admin/loginout', {
-        Authorization: this.Authorization
-      })
-      .then(res => {
-        this.$router.push({ path: '/login' })
-      })
-      .catch(res => {})
+      if (localStorage.getItem('scope') && Number(localStorage.getItem('scope')) === 6) {
+        this.loginOut('/api/zongce/student/loginout')
+      } else {
+        this.loginOut('/api/zongce/admin/loginout')
+      }
+    },
+    loginOut (uri) {
+      this.$axios.post(uri)
+        .then(res => {
+          localStorage.removeItem('token')
+          localStorage.removeItem('scope')
+          this.$router.push({ path: '/login' })
+        })
+        .catch(res => {
+          localStorage.removeItem('token')
+          localStorage.removeItem('scope')
+          this.$router.push({ path: '/login' })
+        })
     }
   }
 }

@@ -7,7 +7,7 @@
       </div>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item>个人信息</el-dropdown-item>
-        <el-dropdown-item @click="stuLoginout">注 销</el-dropdown-item>
+        <el-dropdown-item @click.native="stuLoginout">注 销</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
   </div>
@@ -22,19 +22,26 @@ export default {
   },
   methods: {
     stuLoginout () {
-      this.$axios
-      .post('/api/zongce/student/loginout', {
-        Authorization: this.Authorization
+      this.$confirm('是否要注销登录?', '警告', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
       })
-      .then(res => {
-        Message({
-          showClose: true,
-          message: res.message,
-          type: 'warning'
+        .then(() => {
+          this.$axios
+            .post('/api/zongce/student/loginout')
+            .then(res => {
+              localStorage.clear()
+              this.$router.push({ path: '/login' })
+            })
+            .catch(res => {})
         })
-        this.$router.push({ path: '/login' })
-      })
-      .catch(res => {})
+        .catch(() => {
+          this.$message({
+            message: '取消注销',
+            type: 'warning'
+          })
+        })
     }
   }
 }

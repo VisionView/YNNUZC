@@ -53,8 +53,8 @@ export default {
   methods: {
     prevent () {
       Bus.$emit('val', this.active - 2)
-      if (this.active > 7) this.active = 0;
-      this.$router.push({ path: 'techinovation'})
+      if (this.active > 7) this.active = 0
+      this.$router.push({ path: 'techinovation' })
     },
     next () {
       Bus.$emit('val', this.active)
@@ -64,7 +64,7 @@ export default {
         cancelButtonText: '关闭',
         type: 'success'
       }).then(() => {
-        this.$router.push({ path: '/student/evaluation/evaluationresult'})
+        this.$router.push({ path: '/student/evaluation/evaluationresult' })
       }).catch(() => {})
     }
   }
